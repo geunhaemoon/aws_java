@@ -14,7 +14,7 @@ public class Product {
 	
 	
 	public Product(String model, int price) {
-		super();
+//		super(); 생략되어있음
 		this.model = model;
 		this.price = price;
 	}

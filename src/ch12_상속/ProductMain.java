@@ -8,11 +8,12 @@ public class ProductMain {
 		
 		Product product = new Product("상품",3000);
 
-		
-		//다운캐스팅
+//		Product product= clothes;
+//		
+//		//다운캐스팅
 //		Computer computer2 = (Computer) product;
-		
-		
+//		
+//		
 //		System.out.println(computer2.getType());
 		
 	}
