@@ -2,7 +2,7 @@ package ch03_연산자;
 
 public class Note {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		System.out.println("주석 데스트1");
 		System.out.println("주석 데스트2");
 		System.out.println("주석 데스트3");

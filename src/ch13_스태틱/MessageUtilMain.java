@@ -8,15 +8,14 @@ public class MessageUtilMain {
 	
 	public static void main(String[] args) {
 //		Arrays.
-		MessageUtil messageUtil = new MessageUtil();
+		MessageUtilMain messageUtilMain = new MessageUtilMain();
 		
-		System.out.println(messageUtil.a);
+		System.out.println(messageUtilMain.a);
 		
-		Array01.main(null);
+//		Array01.main(null);
 		
 		MessageUtil messageUtil2 = new MessageUtil();
 		
-				
 		
 		MessageUtil messageUtil = new MessageUtil();
 		
