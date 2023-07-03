@@ -22,6 +22,54 @@ public class CustomArrayList<T> {
 		 array = newArray;
 	}
 	
+		public void add(int index, String str) {
+			String[] newArray = new String[array.length+1];
+			for(int i = 0; i < index; i++) {
+				newArray[i] = array[i];
+			}
+			
+			newArray[index] =str;
+			
+			for (int i = index; i < array.length; i++) {
+				newArray[i+1] = array[i];
+			}
+			array = newArray;
+				
+		}
+		
+		
+		
+		public String remove() {
+			String value = null;
+			String[] killArray = new String[array.length-1];
+			
+			value = array[array.length-1];
+			
+			for (int i = 0; i < killArray.length; i++) {
+				killArray[i] =array[i];
+			}
+			array = killArray;
+			
+			return value;
+		}
+		
+		
+		public String remove(int index) {
+			String[] killArray = new String[array.length-1];
+			for (int i = index; i < index; i++) {
+				killArray[i] = null;
+
+				return value;
+			}
+			
+			for (int i = 0; i < array.length; i++) {
+				killArray[i=1] = array[i]
+				
+			}
+			array = killArray;
+			
+		}
+		
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -33,21 +81,15 @@ public class CustomArrayList<T> {
 //		for (int i = 0; i < array.length; i++) {
 //			builder.append(array[i] + ",");
 //		}
-// 이렇게 길게 써지는걸 27-30으로 정리가능
+// 이렇게 길게 써지는걸 위로 정리가능
+
 		
-		public void add(int index, String str) {
-			String[] newArray = new String[(array.length)+1];
-			
-			for(int i = 0; i < index; i++) {
-				newArray[i] = array[i];
-			}
-			newArray[index] =str;
-			for (int i = index; i < array.length; i++) {
-				
-			}
-			array = newArray;
-				
-		}
+		
+		
+		
+		
+		
+		
 		
 		
 		builder.delete(builder.lastIndexOf(","), builder.length());
