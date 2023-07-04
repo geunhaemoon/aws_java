@@ -41,34 +41,54 @@ public class CustomArrayList<T> {
 		
 		public String remove() {
 			String value = null;
-			String[] killArray = new String[array.length-1];
+			String[] newArray = new String[array.length-1];
 			
 			value = array[array.length-1];
 			
-			for (int i = 0; i < killArray.length; i++) {
-				killArray[i] =array[i];
+			for (int i = 0; i < newArray.length; i++) {
+				newArray[i] =array[i];
 			}
-			array = killArray;
+			array = newArray;
 			
 			return value;
 		}
 		
 		
 		public String remove(int index) {
-			String[] killArray = new String[array.length-1];
-			for (int i = index; i < index; i++) {
-				killArray[i] = null;
+			String value = null;
+			String[] newArray = new String[array.length-1];
+			
+			value = array[index];
+//			for (int i = 0; i < array.length; i++) {
+//				int tempIndex = i-1;
+//				if (i == index) {
+//					continue;					
+//				}
+//				if (i<index) {
+//					tempIndex = i;
+//					
+//				}
+//				killArray[tempIndex] = array[i];
+//			}
 
-				return value;
+			for (int i = 0; i < index; i++) {
+				newArray[i] = array[i];
+			}for(int i = index; i<array.length-1; i++) {
+				newArray[i] = array[i+1];
 			}
 			
-			for (int i = 0; i < array.length; i++) {
-				killArray[i=1] = array[i]
-				
-			}
-			array = killArray;
+			array = newArray;
 			
+			return value;
 		}
+		
+		
+		public void set(int index, String str) {
+			array[index] = str;
+		}
+		
+		
+		
 		
 	@Override
 	public String toString() {
