@@ -101,7 +101,19 @@ public class SeverApplication {
 				
 			default:
 				System.out.println("다시 선택하세요.");
+				
 			}//switch		
+
+			if (serverSocket == null) {
+				try {
+					//0.5초만 기다려라 , 순서대로 실행가능
+					connectionThread.join(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+			}
+			
 		}//while
 	}//main
 }//class
