@@ -7,7 +7,7 @@ public class Note {
 		System.out.println("주석 데스트2");
 		System.out.println("주석 데스트3");
 		System.out.println("주석 데스트4");
-	}
+	};
 
 }
 

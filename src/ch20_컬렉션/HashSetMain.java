@@ -12,7 +12,7 @@ public class HashSetMain {
 			
 			System.out.println(testUsers);
 			
-			TestUser value : null;
+			TestUser value = null;
 			
 			for(TestUser testUser : testUsers) {
 				if(testUser.getUsername().equals("ccc")) {

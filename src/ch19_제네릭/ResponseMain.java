@@ -29,7 +29,7 @@ public class ResponseMain {
 //		response3 = response2;		
 		
 		UpdateUser updateUser = UpdateUser.builder()
-				.username("aaa")
+				.name("aaa")
 				.password("1234")
 				.address("부산")
 				.phone("010-0000-0000")

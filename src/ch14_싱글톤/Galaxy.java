@@ -1,4 +1,4 @@
-package ch14_싱글폰;
+package ch14_싱글톤;
 
 public class Galaxy {
 

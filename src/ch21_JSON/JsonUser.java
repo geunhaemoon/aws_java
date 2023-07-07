@@ -1,4 +1,4 @@
-package ch20_컬렉션;
+package ch21_JSON;
 
 import lombok.Builder;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Builder
 @Data
-public class TestUser {
+public class JsonUser {
 	private String username;
 	private String password;
 	

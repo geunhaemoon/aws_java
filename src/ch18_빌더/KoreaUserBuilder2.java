@@ -15,7 +15,6 @@ public class KoreaUserBuilder2 {
 		this.userId = userId;
 		return this;
 	}
-	
 	public KoreaUserBuilder2 username(String username) {
 		this.username = username;
 		return this;

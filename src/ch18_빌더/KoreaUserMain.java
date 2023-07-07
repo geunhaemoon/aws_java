@@ -4,9 +4,11 @@ public class KoreaUserMain {
 
 	public static void main(String[] args) {
 		KoreaUser koreaUser = KoreaUser.builder().userId(1).build();
-		KoreaUser koreaUser2 = new koreaUser(1,null,null,null,null); //비효율
+		KoreaUser koreaUser2 = new KoreaUser(1,null,null,null,null); //비효율
 		KoreaUser koreaUser3 = new KoreaUser();
-		KoreaUser3.setUSerId(1);//
+		koreaUser3.setUserId(1);//
+		
+		
 		
 		
 //		KoreaUser koreaUser = KoreaUser.builder()
