@@ -12,6 +12,9 @@ public class SeverApplication {
 	
 	public static ServerSocket serverSocket;
 	public static int port;
+	
+	
+	
 		
 	public static void main(String[] args) {
 	
@@ -59,6 +62,14 @@ public class SeverApplication {
 							//interrupted 가 트루인 상태가 되면 반복을 멈춤, 기다리지(accept)않고 자동으로 소멸시킴
 						while(!Thread.interrupted()) {
 							Socket socket = serverSocket.accept();
+
+							ConnectedSocket connectedSocket = new ConnectedSocket(socket);
+																			//input output을 위해
+							connectedSocket.start();
+							
+							ConnectedClientController.getInstance()
+							.getConnectedSokckets().add(connectedSocket);
+							
 							System.out.println("접속 ! !");
 							System.out.println(socket.getInetAddress().getHostAddress());
 						}
@@ -112,7 +123,7 @@ public class SeverApplication {
 					e.printStackTrace();
 				}
 				
-			}
+			}//if
 			
 		}//while
 	}//main
