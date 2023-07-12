@@ -18,9 +18,10 @@ public class SimpleGUIServer {
 			
 			while(true) {
 				Socket socket = serverSocket.accept();
+				System.out.print("접속");
 				ConnectedSocket connectedSocket = new ConnectedSocket(socket);
-				connectedSocketList.add(connectedSocket);
 				connectedSocket.start();
+				connectedSocketList.add(connectedSocket);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
