@@ -5,7 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 @SuperBuilder
 @ToString
-public class AccountUser<String> {
+public class AccountUser {
 	private String username;
 	private String password;
 

@@ -9,45 +9,47 @@ import com.google.gson.Gson;
 
 import ch26_socket.simpleGUI.client.dto.RequestBodyDto;
 
+public class ClientReceiver extends Thread {
 
-public class ClientReceiver extends Thread{
-
-	
 	@Override
 	public void run() {
 		SimpleGUIClient simpleGUIClient = SimpleGUIClient.getInstance();
-		while(true){
+		while (true) {
 			try {
-				BufferedReader bufferedReader =
-						new BufferedReader(new InputStreamReader(simpleGUIClient.getSocket().getInputStream()));
+				BufferedReader bufferedReader = new BufferedReader(
+						new InputStreamReader(simpleGUIClient.getSocket().getInputStream()));
 				String requestBody = bufferedReader.readLine();
-				
 				requestController(requestBody);
-				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}//while
-		
-		
-	}//run
+		} // while
+	}// run
+
 	private void requestController(String requestBody) {
 		Gson gson = new Gson();
-		
-		String resource = gson.fromJson(requestBody,RequestBodyDto.class).getResource();
-		
+
+		String resource = gson.fromJson(requestBody, RequestBodyDto.class).getResource();
 		switch (resource) {
-		case "showMessage":
-			String messageContent = (String) gson.fromJson(requestBody,RequestBodyDto.class).getBody();
-			SimpleGUIClient.getInstance().getTextArea().append(messageContent+"\n");
+
+		case "updateRoomList":
+			List<String> roomList = (List<String>) gson.fromJson(requestBody, RequestBodyDto.class).getBody();
+			SimpleGUIClient.getInstance().getRoomListModel().clear();
+			SimpleGUIClient.getInstance().getRoomListModel().addAll(roomList);
 			break;
-			
-		case "updateUserList" :
-			List<String> usernameList = (List<String>) gson.fromJson(requestBody,RequestBodyDto.class).getBody();
+
+		case "showMessage":
+			String messageContent = (String) gson.fromJson(requestBody, RequestBodyDto.class).getBody();
+			SimpleGUIClient.getInstance().getChattingTextArea().append(messageContent + "\n");
+			break;
+
+		case "updateUserList":
+			List<String> usernameList = (List<String>) gson.fromJson(requestBody, RequestBodyDto.class).getBody();
 			SimpleGUIClient.getInstance().getUserListModel().clear();
 			SimpleGUIClient.getInstance().getUserListModel().addAll(usernameList);
+
 			break;
 
 		}
 	}
-}//clientReceiver
+}// clientReceiver

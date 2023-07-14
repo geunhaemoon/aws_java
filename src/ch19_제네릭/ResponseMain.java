@@ -6,12 +6,7 @@ public class ResponseMain {
 		Response<String> response1 = new Response<String>(200, "회원가입 성공 !!");
 //		System.out.println(response1);
 		
-		SignupUser signupUser = SignupUser.builder()
-				.username("aaa")
-				.password("1234")
-				.name("문근해")
-				.email("aaa@gmail.com")
-				.build();
+		SignupUser signupUser = SignupUser.builder().username("aaa").password("1234").name("문근해").email("aaa@gmail.com").build();
 		
 		Response<SignupUser> response2 = new Response<SignupUser>(400, signupUser);
 //		System.out.println(response2);
@@ -29,7 +24,7 @@ public class ResponseMain {
 //		response3 = response2;		
 		
 		UpdateUser updateUser = UpdateUser.builder()
-				.name("aaa")
+				.username("aaa")
 				.password("1234")
 				.address("부산")
 				.phone("010-0000-0000")

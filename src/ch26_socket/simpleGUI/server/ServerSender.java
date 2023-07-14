@@ -24,10 +24,12 @@ public class ServerSender {
 		return instance;
 	}
 	
+
+	
 	public void send(Socket socket, RequestBodyDto<?> requestBodyDto) {
 		try {
-			PrintWriter printWriter = new PrintWriter(socket.getOutputStream(), true);
-			printWriter.print(gson.toJson(requestBodyDto));
+			PrintWriter printWriter  = new PrintWriter(socket.getOutputStream(), true);
+			printWriter.println(gson.toJson(requestBodyDto));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
