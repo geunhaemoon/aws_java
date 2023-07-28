@@ -111,9 +111,9 @@ public class ConnectedSocket extends Thread {
 
 				List<String> usernameList = new ArrayList<>();
 
-//					room.getUserList().forEach(con -> {
-//						usernameList.add(con.username);
-//					});
+				room.getUserList().forEach(con -> {
+					usernameList.add(con.username);
+				});
 
 				room.getUserList().forEach(connectedSocket -> {
 					RequestBodyDto<List<String>> updateUserListDto = new RequestBodyDto<List<String>>("updateUserList",
@@ -154,11 +154,11 @@ public class ConnectedSocket extends Thread {
 			;
 		});
 
-//			SimpleGUIServer.connectedSocketList.forEach(connectedSocket -> {
-//				RequestBodyDto<String> dto =
-//						new RequestBodyDto<String>("showMessage", sendMessage.getFromUsername()+": " + sendMessage.getMessageBody());
-//				ServerSender.getInstance().send(connectedSocket.socket, dto);
-//			});
+//		SimpleGUIServer.connectedSocketList.forEach(connectedSocket -> {
+//			RequestBodyDto<String> dto = new RequestBodyDto<String>("showMessage",
+//					sendMessage.getFromUsername() + ": " + sendMessage.getMessageBody());
+//			ServerSender.getInstance().send(connectedSocket.socket, dto);
+//		});
 	}
 
 }
